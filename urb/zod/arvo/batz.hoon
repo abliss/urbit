@@ -1,4 +1,4 @@
-::
+!:
 ::  batz (4b), shell
 ::
 |=  pit=vase
@@ -231,13 +231,11 @@
     ++  gill                                            ::    gill:fi:be
       |=  lin=@t                                        ::  input line
       ^+  +>
-      =+  zif=((full lark:lo) [1 1] (trip lin))
+      =+  zif=((full (ifix [gay gay] lark:lo)) [1 1] (trip lin))
       ?~  q.zif 
         =+  duf=[p=~(rend co ~ %ud p.p.zif) q=~(rend co ~ %ud q.p.zif)]
         (warn "<syntax error at [{p.duf} {q.duf}]>")
-      ?~  p.u.q.zif
-        +>.$
-      (lime u.p.u.q.zif)
+      (lime p.u.q.zif)
     ::                                                  ::    hoop:fi:be
     ++  hoop                                            ::  delete prompt
       |=  [lap=wire ted=@ud]                            ::  XX ugly
@@ -349,6 +347,10 @@
         ?~  rot
           %_(+>.$ ..ra (warn (spud (meat kit))), s.orb [%r ~])
         =+  tyk=`kite`[p.p.u.rot q.p.u.rot r.kit r.p.u.rot q.u.rot]
+        ?.  =(kit tyk)
+          ~&  [%kit kit]
+          ~&  [%tyk tyk]
+          !!
         ?>  =(kit tyk)
         +>.$(p.orb (~(del by p.orb) q.p.u.dup))
       ::
@@ -925,35 +927,29 @@
       ==
     ::
     ++  lark                                            ::  parse lark
-      %+  cook  |=(a=(unit ^lark) a)
+      %+  cook  |=(a=^lark a)
+      %+  stag  ~
       ;~  pose
-        (cold ~ ;~(plug col col (star (shim 32 126))))
-        %+  ifix  [(star ace) (star ace)]
-        %+  stag  ~
-        %+  stag  ~
-        ;~  pose
-          lute
-        ::
-          ;~  pfix  tis
-            ;~  pose
-              %+  cook
-                |=  [a=@tas b=(list gene)]
-                ^-  (list lath)
-                :~  [%1 [%cltr b]]
-                    [%0 %0 [%& %set] ~ [[%clsg [%dtpt %tas a] ~]]]
-                ==
-              ;~(plug sym (star ;~(pfix ace wide:vez)))
-            ::
-              %+  cook
-                |=  a=@tas
-                :~  [%0 %0 [%& %none] ~ [%bcts %null]]
-                    [%0 %0 [%& %set] ~ [%clsg [%dtpt %tas a] ~]]
-                ==
-              ;~(pfix tis sym)
-            ==
+        lute
+      ::
+        ;~  pfix  tis
+          ;~  pose
+            %+  cook
+              |=  [a=@tas b=(list gene)]
+              ^-  (list lath)
+              :~  [%1 [%cltr b]]
+                  [%0 %0 [%& %set] ~ [[%clsg [%dtpt %tas a] ~]]]
+              ==
+            ;~(plug sym (star ;~(pfix ace wide:vez)))
+          ::
+            %+  cook
+              |=  a=@tas
+              :~  [%0 %0 [%& %none] ~ [%bcts %null]]
+                  [%0 %0 [%& %set] ~ [%clsg [%dtpt %tas a] ~]]
+              ==
+            ;~(pfix tis sym)
           ==
         ==
-        gay
       ==
     ::
     ++  lamb

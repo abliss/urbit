@@ -1186,7 +1186,7 @@
   ?.  ?=(^ ved)  ~
   =+  his=`@p`q.p.u.fal
   =+  [dis=(end 3 1 q.p.u.hyr) rem=(rsh 3 1 q.p.u.hyr)]
-  ?.  ?&(?=(%c dis) ?=(?(%w %x %y %z) rem))  ~
+  ?.  ?&(?=(%c dis) ?=(?(%v %w %x %y %z) rem))  ~
   [~ rem (case p.u.ved) q.p.u.fal q.p.u.dyc tyl]
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                section 3bF, Arvo models              ::
@@ -1408,7 +1408,6 @@
               [%went p=ship q=cape r=soap]              ::  outgoing reaction
               [%wipe ~]                                 ::  clean to sequence
               [%word p=chum]                            ::  set password
-              [%wort p=tape]                            ::  semantic failure
               [%writ p=riot]                            ::  response
           ==                                            ::
 ++  cart  ,[p=cash q=cash]                              ::  hash change
@@ -1443,13 +1442,6 @@
 ++  cred  ,[p=? q=logo q=oryx r=(unit ship)]            ::  client credentials
 ++  cult  (map duct rave)                               ::  subscriptions
 ++  deed  ,[p=@ q=step]                                 ::  signature, stage
-++  dock                                                ::  link record
-          $:  for=ship                                  ::  host
-              dys=@tas                                  ::  linked to desk
-              kol=case                                  ::  last update case
-              num=@ud                                   ::  update count
-              cuz=(list ,[p=@ud q=dole])                ::  cumulative update
-          ==                                            ::
 ++  dole  ,[p=(unit moar) q=(list maki)]                ::  flow trace
 ++  dome                                                ::  project state
           $:  ang=agon                                  ::  pedigree
@@ -1458,7 +1450,7 @@
               hit=(list frog)                           ::  changes in reverse
               lab=(map ,@tas ,@ud)                      ::  labels
           ==                                            ::
-++  desk  ,[p=cult q=dome]                              ::  project state
+++  desk  ,[p=cult q=dome]                              ::  domestic desk state
 ++  disc  ,@ta                                          ::  modeshipdeskcasespur
 ++  door                                                ::  foreign contact
           $:  wod=road                                  ::  connection to
@@ -1695,12 +1687,11 @@
           $%  [& p=mood]                                ::  single request
               [| p=moat]                                ::  change range
           ==                                            ::
-++  rede                                                ::  mirror
-          $:  lim=@da                                   ::  updated to
-              ask=(unit ,@da)                           ::  requested to
-              pal=(list disc)                           ::  propagated to
-              qyx=cult                                  ::  subscriptions
-              dom=dome                                  ::  state
+++  rede                                                ::  universal project
+          $:  lim=@da                                   ::  complete to
+              qyx=cult                                  ::  subscribers
+              ref=(unit rind)                           ::  external requests
+              dom=dome                                  ::  revision state
           ==                                            ::
 ++  riff  ,[p=disc q=(unit rave)]                       ::  request/desist
 ++  rill                                                ::  outbound stream
@@ -1709,8 +1700,9 @@
           ==                                            ::
 ++  rind                                                ::  request manager
           $:  nix=@ud                                   ::  request index
-              bim=(map ,@ud ,[p=duct q=riff])           ::  outstanding
+              bom=(map ,@ud ,[p=duct q=rave])           ::  outstanding
               fod=(map duct ,@ud)                       ::  current requests
+              haw=(map mood ,*)                         ::  simple cache
           ==                                            ::
 ++  rink                                                ::  foreign state
           $:  hac=(map rump ,*)                         ::  cache
@@ -1726,8 +1718,7 @@
           $:  hun=duct                                  ::  terminal duct
               hez=(unit duct)                           ::  sync duct
               dos=(map ,@tas ,[p=cult q=dome])          ::  native projects 
-              den=(map ,@tas dock)                      ::  links 
-              rid=(map ship ,[p=rind q=rink])           ::  neighbors
+              rid=(map ship (map ,@tas rede))           ::  neighbors
           ==                                            ::
 ++  rock  ,@uvO                                         ::  packet
 ++  rout  ,[p=(list host) q=path r=oryx s=path]         ::  http route (new)
